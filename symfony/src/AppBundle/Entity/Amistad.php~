@@ -1,0 +1,113 @@
+<?php
+
+namespace AppBundle\Entity;
+
+/**
+ * Amistad
+ */
+class Amistad
+{
+    /**
+     * @var integer
+     */
+    private $idAmistad;
+
+    /**
+     * @var string
+     */
+    private $estado = 'P';
+
+    /**
+     * @var integer
+     */
+    private $usuarioEnvia;
+
+    /**
+     * @var integer
+     */
+    private $usuarioAcepta;
+
+
+    /**
+     * Get idAmistad
+     *
+     * @return integer
+     */
+    public function getIdAmistad()
+    {
+        return $this->idAmistad;
+    }
+
+    /**
+     * Set estado
+     *
+     * @param string $estado
+     *
+     * @return Amistad
+     */
+    public function setEstado($estado)
+    {
+        $this->estado = $estado;
+
+        return $this;
+    }
+
+    /**
+     * Get estado
+     *
+     * @return string
+     */
+    public function getEstado()
+    {
+        return $this->estado;
+    }
+
+    /**
+     * Set usuarioEnvia
+     *
+     * @param integer $usuarioEnvia
+     *
+     * @return Amistad
+     */
+    public function setUsuarioEnvia($usuarioEnvia)
+    {
+        $this->usuarioEnvia = $usuarioEnvia;
+
+        return $this;
+    }
+
+    /**
+     * Get usuarioEnvia
+     *
+     * @return integer
+     */
+    public function getUsuarioEnvia()
+    {
+        return $this->usuarioEnvia;
+    }
+
+    /**
+     * Set usuarioAcepta
+     *
+     * @param integer $usuarioAcepta
+     *
+     * @return Amistad
+     */
+    public function setUsuarioAcepta($usuarioAcepta)
+    {
+        $this->usuarioAcepta = $usuarioAcepta;
+
+        return $this;
+    }
+
+    /**
+     * Get usuarioAcepta
+     *
+     * @return integer
+     */
+    public function getUsuarioAcepta()
+    {
+        return $this->usuarioAcepta;
+    }
+}
+

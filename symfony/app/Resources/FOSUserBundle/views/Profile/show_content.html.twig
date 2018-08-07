@@ -1,0 +1,85 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+{#<div class="fos_user_user_show">
+    <p>{{ 'profile.show.username'|trans }}: {{ user.username }}</p>
+    <p>{{ 'profile.show.email'|trans }}: {{ user.email }}</p>
+</div>#}
+<div class="row">
+    <div class="col-md-5">
+        {% if user.pathFoto == null %}
+            <img alt="{{ user.username }}"  class="col-md-10" src="{{ asset('images/profiles/user.svg') }}">
+        {% else %}
+            <img alt="{{ user.username }}"  class="col-md-10 profile-img" src="{{ asset('images/profiles/user_images/')~user.pathFoto }}">
+        {% endif %}
+    </div>
+    <div class="col-md-7">
+        <h2>{{ user.username }}</h2>
+        <p><strong>{{ 'profile.show.email'|trans }}: </strong> {{ user.email }} </p>
+        <p><strong>Bio: </strong>{{ user.bio }}</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <a href="#">
+            <div class="about">
+                <h2><strong class="friends" > </strong></h2>
+                <p>
+                    <small>Amigos</small>
+                </p>
+            </div>
+        </a>
+    </div>
+    <div class="col-md-4">
+        <a href="#">
+            <div class="about">
+                <h2><strong class="posession"></strong></h2>
+                <p>
+                    <small>En posesión</small>
+                </p>
+            </div>
+        </a>
+    </div>
+    <div class="col-md-4">
+        <a href="#">
+            <div class="about">
+                <h2><strong class="leidos"></strong></h2>
+                <p>
+                    <small>Leidos</small>
+                </p>
+            </div>
+        </a>
+    </div>
+    <a class="main-btn pull-right" href="./edit">Editar</a>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    function intlFormat(num)
+    {
+        return new Intl.NumberFormat().format(Math.round(num*10)/10);
+    }
+    function makeFriendly(num){
+    num = num.toString();
+
+        if(num >= 1000000) return intlFormat(num/1000000)+'M';
+        if(num >= 1000) return intlFormat(num/1000)+'k';
+        return intlFormat(num);
+    }
+
+
+
+    var friends = 26343;//numero de amigos
+    var booksPosession = 346; //Numero de libros en posesion
+    var booksReaded =3452352; //Numero de libros leidos
+
+    friends = makeFriendly(friends);
+    booksPosession = makeFriendly(booksPosession);
+    booksReaded = makeFriendly(booksReaded);
+
+    $(".friends").html(friends);
+    $(".posession").html(booksPosession);
+    $(".leidos").html(booksReaded);
+
+
+
+
+</script>

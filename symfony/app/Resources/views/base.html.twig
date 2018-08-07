@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}
+            <!-- Google font -->
+            <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CVarela+Round" rel="stylesheet">
+
+            <!-- Bootstrap -->
+            <link type="text/css" rel="stylesheet" href="{{ asset('application/css/bootstrap.min.css') }}" />
+
+            <!-- Owl Carousel -->
+            <link type="text/css" rel="stylesheet" href="{{ asset('application/css/owl.carousel.css') }}">
+            <link type="text/css" rel="stylesheet" href="{{ asset('application/css/owl.theme.default.css') }}">
+
+            <!-- Magnific Popup -->
+            <link type="text/css" rel="stylesheet" href="{{ asset('application/css/magnific-popup.css') }}">
+
+            <!-- Font Awesome Icon -->
+            <link rel="stylesheet" href="{{ asset('application/css/font-awesome.min.css') }}">
+
+            <!-- Custom stlylesheet -->
+            <link type="text/css" rel="stylesheet" href="{{ asset('application/css/style.css') }}">
+            <link type="text/css" rel="stylesheet" href="{{ asset('application/css/estilos.css') }}">
+            <link type="text/css" rel="stylesheet" href="{{ asset('application/css/dropzone.min.css') }}">
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
+    </head>
+    <body>
+    {% block nav %}
+        <!-- Background Image -->
+        <div class="bg-img" style="background-image: url('{{ asset('application/img/background4.jpg') }}');">
+            <div class="overlay"></div>
+        </div>
+        <!-- /Background Image -->
+        <!-- Nav -->
+        <nav id="nav" class="navbar nav-transparent">
+            <div class="container">
+
+                <div class="navbar-header">
+                    <!-- Logo -->
+                    <div class="navbar-brand">
+                        <a href="index.html">
+                            <img class="logo" src="{{ asset('application/img/logo.png') }}" alt="logo">
+                            <img class="logo-alt" src="{{ asset('application/img/logo-alt.png') }}" alt="logo">
+                        </a>
+                    </div>
+                    <!-- /Logo -->
+
+                    <!-- Collapse nav button -->
+                    <div class="nav-collapse">
+                        <span></span>
+                    </div>
+                    <!-- /Collapse nav button -->
+                </div>
+                <!--  Main navigation  -->
+                <ul class="main-nav nav navbar-nav navbar-right">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#intro">Introduccion</a></li>
+                    <li><a href="#team">Team</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                        <a class="main-btn login-menu" href="/profile">Profile</a>
+                        <a class="main-btn login-menu" href="/logout">Logout</a>
+                    {% else %}
+                        <a class="main-btn login-menu" href="/login">Sign in</a>
+                        <a class="main-btn login-menu" href="/register">Sign up</a>
+                    {% endif %}
+                </ul>
+
+                <!-- /Main navigation -->
+            </div>
+        </nav>
+        <!-- /Nav -->
+    {% endblock %}
+        {% block body %}{% endblock %}
+        {% block javascripts %}
+            <script type="text/javascript" src="{{ asset('application/js/jquery.min.js') }}"></script>
+            <script type="text/javascript" src="{{ asset('application/js/bootstrap.min.js') }}"></script>
+            <script type="text/javascript" src="{{ asset('application/js/owl.carousel.min.js') }}"></script>
+            <script type="text/javascript" src="{{ asset('application/js/jquery.magnific-popup.js') }}"></script>
+            <script type="text/javascript" src="{{ asset('application/js/main.js') }}"></script>
+            <script type="text/javascript" src="{{ asset('application/js/dropzone.js') }}"></script>
+        {% endblock %}
+    </body>
+</html>

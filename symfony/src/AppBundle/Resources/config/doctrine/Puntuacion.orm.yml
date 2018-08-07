@@ -1,0 +1,39 @@
+AppBundle\Entity\Puntuacion:
+    type: entity
+    table: puntuacion
+    indexes:
+        fk_puntuacion_libro1_idx:
+            columns:
+                - libro_id_libro
+        fk_puntuacion_usuario1_idx:
+            columns:
+                - usuario_id
+    id:
+        idPuntuacion:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: id_puntuacion
+            generator:
+                strategy: IDENTITY
+    fields:
+        libroIdLibro:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: libro_id_libro
+        valor:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+        usuarioId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: usuario_id
+    lifecycleCallbacks: {  }

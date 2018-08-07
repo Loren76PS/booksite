@@ -1,0 +1,34 @@
+AppBundle\Entity\Coleccion:
+    type: entity
+    table: coleccion
+    indexes:
+        fk_coleccion_libro1_idx:
+            columns:
+                - libro_id_libro
+        fk_coleccion_usuario1_idx:
+            columns:
+                - usuario_id
+    id:
+        idColeccion:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: id_coleccion
+            generator:
+                strategy: IDENTITY
+    fields:
+        libroIdLibro:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: libro_id_libro
+        usuarioId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: usuario_id
+    lifecycleCallbacks: {  }

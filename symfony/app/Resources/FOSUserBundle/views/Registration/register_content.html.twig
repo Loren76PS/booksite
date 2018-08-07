@@ -1,0 +1,13 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<h1 class="title">Registro</h1>
+{{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'contact-form'}}) }}
+    {{ form_row(form.email,{ 'attr': {'class': "input", 'placeholder': 'form.email'|trans}, 'label':false }) }}
+
+    {{ form_row(form.username,{ 'attr': {'class': "input", 'placeholder': 'form.username'|trans}, 'label':false }) }}
+    {{ form_row(form.plainPassword.first,{ 'attr': {'class': "input", 'placeholder': 'form.password'|trans}, 'label':false }) }}
+    {{ form_row(form.plainPassword.second,{ 'attr': {'class': "input", 'placeholder': 'form.password_confirmation'|trans}, 'label':false }) }}
+<div style="margin-top: 20px">
+    <input type="submit" class="main-btn" value="{{ 'registration.submit'|trans }}"/>
+</div>
+{{ form_end(form) }}

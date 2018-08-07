@@ -1,0 +1,34 @@
+AppBundle\Entity\ListaDeseos:
+    type: entity
+    table: lista_deseos
+    indexes:
+        fk_lista_deseos_libro1_idx:
+            columns:
+                - libro_id_libro
+        fk_lista_deseos_usuario1_idx:
+            columns:
+                - usuario_id
+    id:
+        idDeseo:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: id_deseo
+            generator:
+                strategy: IDENTITY
+    fields:
+        libroIdLibro:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: libro_id_libro
+        usuarioId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: usuario_id
+    lifecycleCallbacks: {  }

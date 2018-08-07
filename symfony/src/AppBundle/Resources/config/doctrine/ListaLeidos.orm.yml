@@ -1,0 +1,34 @@
+AppBundle\Entity\ListaLeidos:
+    type: entity
+    table: lista_leidos
+    indexes:
+        fk_lista_leidos_libro_idx:
+            columns:
+                - libro_id_libro
+        fk_lista_leidos_usuario1_idx:
+            columns:
+                - usuario_id
+    id:
+        idLeido:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: id_leido
+            generator:
+                strategy: IDENTITY
+    fields:
+        libroIdLibro:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: libro_id_libro
+        usuarioId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: usuario_id
+    lifecycleCallbacks: {  }

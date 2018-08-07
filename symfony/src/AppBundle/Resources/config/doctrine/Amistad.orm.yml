@@ -1,0 +1,41 @@
+AppBundle\Entity\Amistad:
+    type: entity
+    table: amistad
+    indexes:
+        fk_amistad_usuario1_idx:
+            columns:
+                - usuario_envia
+        fk_amistad_usuario2_idx:
+            columns:
+                - usuario_acepta
+    id:
+        idAmistad:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: id_amistad
+            generator:
+                strategy: IDENTITY
+    fields:
+        estado:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: true
+                default: P
+        usuarioEnvia:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: usuario_envia
+        usuarioAcepta:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: usuario_acepta
+    lifecycleCallbacks: {  }

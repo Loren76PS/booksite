@@ -1,0 +1,16 @@
+.validar{
+    color: #880000;
+}
+::-webkit-input-placeholder {
+    text-align: center;
+}
+
+.login-menu{
+    padding: 0.5em 0.3em
+}
+.profile-img{
+    border-radius: 50%;
+}
+div #dropzone{
+    display: inline;
+}

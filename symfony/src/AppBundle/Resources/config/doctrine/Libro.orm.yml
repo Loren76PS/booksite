@@ -1,0 +1,57 @@
+AppBundle\Entity\Libro:
+    type: entity
+    table: libro
+    id:
+        idLibro:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: id_libro
+            generator:
+                strategy: IDENTITY
+    fields:
+        isbn:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+            column: ISBN
+        titulo:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+        autor:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+        editorial:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+        pathImagen:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+            column: path_imagen
+        paginas:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+        puntuacion:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+    lifecycleCallbacks: {  }

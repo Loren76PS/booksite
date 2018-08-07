@@ -1,0 +1,43 @@
+AppBundle\Entity\Recomendacion:
+    type: entity
+    table: recomendacion
+    indexes:
+        fk_recomendacion_libro1_idx:
+            columns:
+                - libro_id_libro
+        fk_recomendacion_usuario1_idx:
+            columns:
+                - usuario_recomienda
+        fk_recomendacion_usuario2_idx:
+            columns:
+                - usuario_esRecomendado
+    id:
+        idRecomendacion:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: id_recomendacion
+            generator:
+                strategy: IDENTITY
+    fields:
+        libroIdLibro:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: libro_id_libro
+        usuarioRecomienda:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: usuario_recomienda
+        usuarioEsrecomendado:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: usuario_esRecomendado
+    lifecycleCallbacks: {  }
