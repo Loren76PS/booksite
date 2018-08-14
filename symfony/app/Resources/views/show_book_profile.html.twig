@@ -1,0 +1,52 @@
+{%  extends 'layout.html.twig' %}
+
+{% block books_content %}
+    <div class="row">
+        <div class="col-md-5">
+            {% if book.pathImagen == null %}
+                <img alt="{{ book.titulo }}"  class="col-md-10" src="{{ asset('images/books/user.svg') }}">
+            {% else %}
+                <img alt="{{ book.titulo }}"  class="col-md-10" src="{{ asset('images/books/')~book.pathImagen }}">
+            {% endif %}
+        </div>
+        <div class="col-md-7">
+            <h2>{{ book.titulo }}</h2>
+            <p><strong>Autor: </strong> {{ book.autor }} </p>
+            <p><strong>Editorial: </strong>{{ book.editorial }}</p>
+            <p><strong>Paginas: </strong>{{ book.paginas }}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <a href="#">
+                <div class="about">
+                    <h2><strong class="friends" > </strong></h2>
+                    <p>
+                        <small>Lo quieren</small>
+                    </p>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-4">
+            <a href="#">
+                <div class="about">
+                    <h2><strong class="posession"></strong></h2>
+                    <p>
+                        <small>Lo poseen</small>
+                    </p>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-4">
+            <a href="#">
+                <div class="about">
+                    <h2><strong class="leidos"></strong></h2>
+                    <p>
+                        <small>Lo han leido</small>
+                    </p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+{% endblock %}
